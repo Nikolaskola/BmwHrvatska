@@ -1,0 +1,156 @@
+/* Resetiranje osnovnih stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Osnovni stil za tijelo stranice */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 60px; /* Razmak ispod izbornika */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Osigurava da stranica zauzima cijeli ekran */
+}
+
+/* Izbornik fiksiran na vrhu */
+.model-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #000; /* Crna pozadina za izbornik */
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Logo u izborniku */
+.logo {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 40px; /* Podesite veličinu loga */
+    width: auto;
+}
+
+/* Stilovi za navigacijski meni */
+.model-nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.model-nav ul li {
+    margin-right: 20px;
+}
+
+.model-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.model-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.model-nav ul li a:hover {
+    color: #50ebff; /* Zlata boja kad se pređe mišem */
+}
+
+/* Container for the images */
+.images-container {
+    display: flex; /* Use Flexbox to place items side by side */
+    width: 100%; /* Make the container take full width of the screen */
+    margin: 32px auto; /* Center the container horizontally */
+    justify-content: space-between; /* Spread out images evenly within the container */
+}
+
+/* Image container for each individual image */
+.images-container .image {
+    position: relative;
+    width: 32%; /* Each image takes up 32% of the container width */
+    height: 300px; /* Set a fixed height for the images */
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Image style */
+.images-container img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image height match the container */
+    object-fit: cover; /* Ensure the images maintain their aspect ratio */
+    transition: all 400ms; /* Smooth transition effect */
+}
+
+/* Description for each image */
+.images-container .description {
+    position: absolute;
+    bottom: 10px; /* Position description at the bottom of the image */
+    background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    color: #fff;
+    padding: 8px 16px;
+    width: 100%;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Heading style for the description */
+.images-container .description h2 {
+    color: #50ebff; /* Light blue color for titles on hover */
+}
+
+/* Show description on hover */
+.images-container .image:hover .description {
+    opacity: 1;
+}
+
+/* Zoom effect on hover */
+.images-container .image:hover img {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+}
+.office-image {
+    width: 100%; /* Slika će zauzeti punu širinu ekrana */
+    height: 50vh; /* Visina slike je postavljena na 50% visine ekrana */
+    object-fit: cover; /* Slika se rasteže proporcionalno */
+    transition: all 0.4s ease-in-out; /* Dodaje animaciju */
+}
+
+.image-hover h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #50ebff;
+    opacity: 0; /* Početna nevidljivost teksta */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Hover efekt za sliku i tekst */
+.image-hover:hover .office-image {
+    transform: scale(1.05); /* Slika se lagano uveća */
+}
+
+.image-hover:hover h2 {
+    opacity: 1; /* Tekst postaje vidljiv na hover */
+}
+
+/* Footer style */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Make footer always at the bottom */
+}
